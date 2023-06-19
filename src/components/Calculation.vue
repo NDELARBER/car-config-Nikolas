@@ -6,17 +6,17 @@ export default {
   watch: {
     query:
         function (newValue, oldValue) {
-          queryChanged();
+          this.queryChanged();
         }
   },
   methods: {
     logTest() {
       console.log("Debug: log props.query in Calculation");
-      console.log(query);
+      console.log(this.query);
     },
     updateCalculation() {
       console.log("Calculation changed");
-      console.log(query)
+      console.log(this.query)
     },
     queryChanged() {
       console.log("Function queryChanged()");

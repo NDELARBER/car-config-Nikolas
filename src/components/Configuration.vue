@@ -1,11 +1,6 @@
 <script>
 export default {
-  name: "Configuration",
-  data() {
-    return {
-      query: "Link here",
-    }
-  }
+  name: "Configuration"
 }
 </script>
 

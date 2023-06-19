@@ -22,18 +22,15 @@
     components: { Calculation, Configuration },
     data() {
       return {
-        query: "Link here"
+        query: "Link herse"
       }
     },
     mounted() {
-      console.log("hallo vue")
+      console.log("hallo vueee")
+      console.log("hallo vusdfse")
       console.log(this)
     },
     methods: {
-      updateQuery(newValue) {
-        this.query = newValue;
-        console.log("TESTTEST" + newValue);
-      }
     }
   }
 </script>
