@@ -1,0 +1,123 @@
+
+
+
+
+body {
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    padding:0;
+    margin:0;
+    background-color:lightblue;
+  }
+
+  nav {
+    height: 6vh;
+    
+  }
+
+  #navid {
+    width: 100%;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  #footer-bar {
+    height: 6vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  main {
+    top:0px; left:0px; right:0px;
+    padding:0px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  #main-div {
+    margin: 0;
+    padding-bottom: 10vh;
+  }
+
+  .child-box {
+    margin: 2px;
+  }
+
+  #title {
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    text-align: center;
+
+  }
+
+  #subtitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #content {
+    width: 60vw;
+  }
+
+
+  #config-all {
+    border-radius: 7px;
+    padding-top: 10px;
+    background-color: white;
+    border: 2px solid grey;
+  }
+
+  #config {
+    background-color: white;
+  }
+
+  #calculation {
+    background-color: white;
+  }
+
+  #checkout {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .btn-checkout {
+    margin: 0 5px 10px 5px;
+  }
+
+  .footer-link {
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .footer-link:link {
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    text-decoration: none;
+  }
+
+  .footer-link:active {
+    text-decoration: none;
+  }
+
+  .footer-link:visited {
+    text-decoration: none;
+  }
