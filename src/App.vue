@@ -100,7 +100,7 @@
 
         console.log(queryValues.value.color.slice(0, -1));*/
         console.log("test")
-        this.$refs['calc'].updateCalculation();
+        //this.$refs['calc'].updateCalculation();
 
       }
     }
