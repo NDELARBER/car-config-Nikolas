@@ -1,10 +1,7 @@
-<script setup>
-  import {ref, onMounted} from "vue";
-  const count = ref(0);
-
-  
-  const config = ref()
-  //var queryValues = ref(null)
+<script>
+  import {ref} from "vue";
+  import Calculation from './components/Calculation.vue'
+  import Configuration from './components/Configuration.vue'
 
   var modelQuery = "Cursa";
   var colorQuery = "red";
@@ -20,104 +17,22 @@
     motor: motorQuery
   })
 
-  //var currentQuery = "//localhost:8080/getOffer?model=Cursa&color=black&tires=small&interior=sport&motor=medium"
-  //var query = "//localhost:8080/getOffer?model=Cursa&color=black&tires=small&interior=sport&motor=medium"
-  /*
-  const props = defineProps(['query'])
-  console.log("App: console.log(props.query):")
-  console.log(props.query)
-
-  props.query = "//localhost:8080/getOffer?model=Cursa&color=black&tires=small&interior=sport&motor=medium"
-  console.log("App: console.log(props.query):")
-  console.log(props.query)
-  */
-
-  const props = defineProps(['query'])
-  //props.query = "test374"
-
-  var query = "testvalue"
-  
-  
-
-  onMounted(() => {
-    console.log(config.value);
-    //queryValues = ref(document.getElementById("colors").value)
-    console.log("Debug: log props.query in App")
-    console.log(props.query)
-    query = "onMounted test value debug"
-  })
-
-
-  function changedColor() {
-    console.log(config.value);
-  }
-
-
-  
-
-</script>
-
-<script>
-  import Calculation from './components/Calculation.vue'
-  import Configuration from './components/Configuration.vue'
-
-  import axios from "axios"
-
-  //var query = "//localhost:8080/getOffer?model=Cursa&color=black&tires=small&interior=sport&motor=medium"
-
-  
   export default {
     name: "App",
-    components: { Calculation },
+    components: { Calculation, Configuration },
     data() {
       return {
-        query: "Link here"
+        query: "Link herse"
       }
     },
     mounted() {
-      console.log("hallo vue")
+      console.log("hallo vueee")
+      console.log("hallo vusdfse")
       console.log(this)
     },
     methods: {
-      updateQuery(newValue) {
-        this.query = newValue;
-        console.log("TESTTEST" + newValue);
-      },
-      redoCalculation() {
-        /*console.log("test123");
-        console.log(queryValues.value.color);
-
-        queryValues.value.model = "Cursa";
-        queryValues.value.color = document.getElementById("colors").value;
-        queryValues.value.tires = document.getElementById("tires").value;
-        queryValues.value.interior = document.getElementById("interior").value;
-        queryValues.value.motor = document.getElementById("motors").value;
-
-        query = "//localhost:8080/getOffer?model=Cursa&color=" + queryValues.value.color.slice(0, -1) + "&tires=" + queryValues.value.tires.slice(0, -1) + "&interior=" + queryValues.value.interior.slice(0, -1) + "&motor=" + queryValues.value.motor.slice(0, -1)
-
-        console.log("Debug: log query in App");
-        console.log(query);
-
-        console.log(queryValues.value.color.slice(0, -1));*/
-        console.log("test")
-        //this.$refs['calc'].updateCalculation();
-
-      }
     }
   }
-
-
-  /*
-  export default {
-    props: ['query'],
-    setup(props) {
-      setup()
-      console.log("Debug: log props.query")
-      console.log(props.query)
-    }
-  }
-  */
-  
 </script>
 
 
@@ -157,6 +72,9 @@
                 <template #default> <Configuration ref="config" @changedSelection="(redoCalculation())"/> </template>
                 <template #fallback>Loading...</template>
               </Suspense>
+            <input
+                :value="query"
+                @input="event => query = event.target.value">
             <br>
           </div>
         </div>
