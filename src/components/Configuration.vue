@@ -2,25 +2,16 @@
     import axios from "axios"
     import { ref, watch, onMounted } from "vue";
 
-    //Hier den Get-Befehl anpassen:
-    //Mehrere Variablen und Gets erstellen, um die Konfigurationsmöglichkeiten für Farbe, Reifen, ... zu speichern
+    //DB-Anfragen zum Erhalten der verschiedenen Optionen für die Dropdown-Menüs
     const responseColor = await axios.get("//localhost:8080/getColors?model=Cursa")
     const responseTires = await axios.get("//localhost:8080/getTires")
     const responseInterior = await axios.get("//localhost:8080/getInteriors?model=Cursa")
     const responseMotors = await axios.get("//localhost:8080/getMotors?model=Cursa")
 
 
-    //const 
-    //const selectedColor = ref()
-
-    //watch()
-
-    function testtest() {
-        console.log("It's alive!");
-    }
-
-        // To do: Von JS in Vue.js konvertieren?
-
+    // To do: Von JS in Vue.js konvertieren?
+    // To do: JSON-Datei zum Übersetzen des Codes/Keys? (red -> Rot)
+    //Funktionen zum Erstellen der Optionen der verschiedenen Selects
     function createLists() {
         for (let i = 0; i<responseColor.data.length; i++) {
             document.getElementById("colors").innerHTML += ("<option value=" + responseColor.data[i] + "\">" + responseColor.data[i] + "</option>");
@@ -40,26 +31,29 @@
 
     }
 
-
+    //Erstellen der Optionen der verschiedenen Selects beim Mounten der Komponente
     onMounted(() => {
         createLists();
     })
 
 </script>
 
-<script>
-    
-</script>
 
 <template>
-    <select name="color" id="colors" @change="$emit('changedSelection')">
-              <!--<option disabled value="">Bitte auswählen</option>-->
-            </select>
-            <p></p>
-            <select name="tires" id="tires" @change="$emit('changedSelection')"></select>
-            <p></p>
-            <select name="interior" id="interior" @change="$emit('changedSelection')"></select>
-            <p></p>
-            <select name="motor" id="motors" @change="$emit('changedSelection')"></select>
+    <div class="card col col-5 child-box" style="padding:0;">
+        <h3 class="card-header">Konfiguration</h3>
+        <div class="card-body">
+        <select name="color" id="colors" @change="$emit('changedSelection')">
+                </select>
+                <p></p>
+                <select name="tires" id="tires" @change="$emit('changedSelection')"></select>
+                <p></p>
+                <select name="interior" id="interior" @change="$emit('changedSelection')"></select>
+                <p></p>
+                <select name="motor" id="motors" @change="$emit('changedSelection')"></select>
+        </div>
+    </div>
 
 </template>
+
+<style src="../assets/main.css"></style>
