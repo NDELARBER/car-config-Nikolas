@@ -1,7 +1,6 @@
 <script setup>
   import Calculation from './components/Calculation.vue'
   import Configuration from './components/Configuration.vue'
-  import Testcomponent from './components/Testcomponent.vue'
   import Footer from './components/Footer.vue'
   import Nav from './components/Nav.vue'
   import Checkout from './components/Checkout.vue'
@@ -10,16 +9,6 @@
   
   const config = ref()
   var queryNew = ref("//localhost:8080/getOffer?model=Cursa&color=black&tires=big&interior=sport&motor=medium");
-  
-
-  function changedColor() {
-    console.log(config.value);
-  }
-
-  function updateQuery(newValue) {
-        query.value = newValue;
-        console.log("TESTTEST" + newValue);
-  }
 
   function redoCalculation() {
     let queryModel = "Cursa";
