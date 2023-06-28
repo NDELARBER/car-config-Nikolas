@@ -5,6 +5,7 @@
   import Nav from './components/Nav.vue'
   import Checkout from './components/Checkout.vue'
   import {ref, onMounted} from "vue";
+  import axios from "axios"
 
   
   const config = ref()
@@ -18,6 +19,17 @@
     let queryMotor = document.getElementById("motors").value;
 
     queryNew.value = `//localhost:8080/getOffer?model=${queryModel}&color=${queryColor.slice(0, -1)}&tires=${queryTires.slice(0, -1)}&interior=${queryInterior.slice(0, -1)}&motor=${queryMotor.slice(0, -1)}`;
+  }
+
+  function saveOffer() {
+    let queryModel = "Cursa";
+    let queryColor = document.getElementById("colors").value;
+    let queryTires = document.getElementById("tires").value;
+    let queryInterior = document.getElementById("interior").value;
+    let queryMotor = document.getElementById("motors").value;
+
+    axios.post(`//localhost:8080/postOffer?model=${queryModel}&color=${queryColor.slice(0, -1)}&tires=${queryTires.slice(0, -1)}&interior=${queryInterior.slice(0, -1)}&motor=${queryMotor.slice(0, -1)}`)
+    console.log("offer saved");
   }
 
 </script>
@@ -61,7 +73,7 @@
 
         <!-- CHECKOUT COMPONENT -->
         <Suspense>
-          <template #default> <Checkout /> </template>
+          <template #default> <Checkout @saveOffer="(saveOffer())"/> </template>
           <template #fallback>Loading...</template>
         </Suspense>
 

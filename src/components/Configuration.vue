@@ -9,7 +9,6 @@
     const responseMotors = await axios.get("//localhost:8080/getMotors?model=Cursa")
 
 
-    // To do: Von JS in Vue.js konvertieren?
     // To do: JSON-Datei zum Übersetzen des Codes/Keys? (red -> Rot)
     //Funktionen zum Erstellen der Optionen der verschiedenen Selects
     function createLists() {
